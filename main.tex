@@ -1,0 +1,2496 @@
+% ============================================================
+% BRITISH ENGLISH PROFICIENCY PROGRAMME
+% 12-Month Intensive Programme — 2 Hours Daily
+% Preamble
+% ============================================================
+\ifdefined\VowelsStandalonefalse\else
+\documentclass[
+    12pt,
+    a4paper,
+    oneside,
+    openany
+]{book}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\usepackage[british]{babel}
+
+\usepackage{geometry}
+\geometry{margin=27mm}
+\usepackage{longtable,booktabs,array,tabularx,multicol,enumitem}
+\usepackage{xcolor,graphicx,hyperref,fancyhdr,tcolorbox}
+\tcbuselibrary{breakable,skins}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!50!black}
+\newcommand{\ipa}[1]{{\fontspec{DejaVu Sans}/#1/}}
+\newcommand{\res}[3]{\begin{tcolorbox}[breakable,colback=gray!5,colframe=gray!55,title={Resource placeholder: #1}]\textbf{Deliverable:} #2\par\textbf{Specification:} #3\end{tcolorbox}}
+\newcommand{\task}[2]{\begin{tcolorbox}[breakable,colback=blue!2,colframe=blue!45!black,title={Practice: #1}]#2\end{tcolorbox}}
+\newcommand{\checkline}{\par\noindent\rule{\linewidth}{0.35pt}\par}
+\setcounter{tocdepth}{2}
+
+
+
+% ============================================================
+% ENCODING AND LANGUAGE
+% ============================================================
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[
+    british,
+    main=british
+]{babel}
+
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ============================================================
+% PAGE GEOMETRY
+% ============================================================
+
+\usepackage[
+    top=2.5cm,
+    bottom=2.5cm,
+    inner=3cm,
+    outer=2.5cm,
+    headheight=15pt,
+    headsep=0.8cm,
+    footskip=1.2cm
+]{geometry}
+
+% ============================================================
+% TYPOGRAPHY AND PARAGRAPH FORMATTING
+% ============================================================
+
+\usepackage{setspace}
+
+\setstretch{1.15}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\usepackage{ragged2e}
+
+% ============================================================
+% COLOURS
+% ============================================================
+
+\usepackage{xcolor}
+
+\definecolor{BritishNavy}{HTML}{012169}
+\definecolor{BritishRed}{HTML}{C8102E}
+\definecolor{DarkGrey}{HTML}{333333}
+\definecolor{MediumGrey}{HTML}{666666}
+\definecolor{LightGrey}{HTML}{F3F4F6}
+\definecolor{VeryLightBlue}{HTML}{EEF3FA}
+\definecolor{PracticeGreen}{HTML}{2E7D32}
+\definecolor{WarningOrange}{HTML}{C65D00}
+
+% ============================================================
+% GRAPHICS
+% ============================================================
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+
+\graphicspath{{images/}{figures/}{assets/}}
+
+% ============================================================
+% TABLES
+% ============================================================
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{makecell}
+
+\renewcommand{\arraystretch}{1.2}
+
+% ============================================================
+% LISTS
+% ============================================================
+
+\usepackage{enumitem}
+
+\setlist[itemize]{
+    leftmargin=1.5em,
+    itemsep=0.25em,
+    topsep=0.4em
+}
+
+\setlist[enumerate]{
+    leftmargin=1.8em,
+    itemsep=0.25em,
+    topsep=0.4em
+}
+
+% ============================================================
+% MATHEMATICS AND SYMBOLS
+% ============================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% ============================================================
+% PHONETICS / IPA
+% ============================================================
+
+\usepackage{tipa}
+
+% Examples:
+% \textipa{/I/}
+% \textipa{/i:/}
+% \textipa{/T/}
+% \textipa{/D/}
+% \textipa{/S/}
+% \textipa{/Z/}
+
+% ============================================================
+% HEADINGS
+% ============================================================
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+    {\normalfont\bfseries\color{BritishNavy}}
+    {\Large\chaptername\ \thechapter}
+    {0.5em}
+    {\Huge}
+
+\titleformat{\section}
+    {\Large\bfseries\color{BritishNavy}}
+    {\thesection}
+    {0.75em}
+    {}
+
+\titleformat{\subsection}
+    {\large\bfseries\color{BritishRed}}
+    {\thesubsection}
+    {0.75em}
+    {}
+
+\titleformat{\subsubsection}
+    {\normalsize\bfseries\color{DarkGrey}}
+    {\thesubsubsection}
+    {0.75em}
+    {}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% ============================================================
+% HEADER AND FOOTER
+% ============================================================
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{
+    \small\textcolor{MediumGrey}{
+        British English Proficiency Programme
+    }
+}
+
+\fancyhead[R]{
+    \small\textcolor{MediumGrey}{
+        \leftmark
+    }
+}
+
+\fancyfoot[C]{
+    \small\textcolor{MediumGrey}{
+        \thepage
+    }
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Chapter-opening pages
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% ============================================================
+% TABLE OF CONTENTS FORMATTING
+% ============================================================
+
+\usepackage{tocloft}
+
+\renewcommand{\cftchapfont}{
+    \bfseries\color{BritishNavy}
+}
+
+\renewcommand{\cftchappagefont}{
+    \bfseries\color{BritishNavy}
+}
+
+\renewcommand{\cftsecfont}{
+    \color{DarkGrey}
+}
+
+\renewcommand{\cftsubsecfont}{
+    \color{MediumGrey}
+}
+
+\setlength{\cftbeforechapskip}{0.7em}
+
+% ============================================================
+% HYPERLINKS AND PDF METADATA
+% ============================================================
+
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=BritishNavy,
+    citecolor=BritishRed,
+    urlcolor=BritishRed,
+    pdfauthor={British English Proficiency Programme},
+    pdftitle={12-Month Intensive British English Proficiency Programme},
+    pdfsubject={
+        Received Pronunciation, Speaking, Listening,
+        Grammar, Writing and Communication
+    },
+    pdfkeywords={
+        British English,
+        Received Pronunciation,
+        RP,
+        English Learning,
+        Speaking,
+        Listening,
+        Phonetics,
+        Grammar,
+        Academic Writing
+    },
+    bookmarksopen=true,
+    bookmarksnumbered=true
+}
+
+\usepackage{bookmark}
+
+% ============================================================
+% BOXES FOR LESSONS, EXERCISES, NOTES, ETC.
+% ============================================================
+
+\usepackage[
+    most
+]{tcolorbox}
+
+% ------------------------------------------------------------
+% Learning objectives
+% ------------------------------------------------------------
+
+\newtcolorbox{learningobjectives}{
+    enhanced,
+    breakable,
+    colback=VeryLightBlue,
+    colframe=BritishNavy,
+    title=\textbf{Learning Objectives},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Pronunciation focus
+% ------------------------------------------------------------
+
+\newtcolorbox{pronunciation}{
+    enhanced,
+    breakable,
+    colback=LightGrey,
+    colframe=BritishRed,
+    title=\textbf{Pronunciation Focus},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Speaking practice
+% ------------------------------------------------------------
+
+\newtcolorbox{speakingpractice}{
+    enhanced,
+    breakable,
+    colback=VeryLightBlue,
+    colframe=PracticeGreen,
+    title=\textbf{Speaking Practice},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Listening practice
+% ------------------------------------------------------------
+
+\newtcolorbox{listeningpractice}{
+    enhanced,
+    breakable,
+    colback=LightGrey,
+    colframe=BritishNavy,
+    title=\textbf{Listening Practice},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Grammar focus
+% ------------------------------------------------------------
+
+\newtcolorbox{grammarfocus}{
+    enhanced,
+    breakable,
+    colback=VeryLightBlue,
+    colframe=DarkGrey,
+    title=\textbf{Grammar Focus},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Vocabulary
+% ------------------------------------------------------------
+
+\newtcolorbox{vocabularybox}{
+    enhanced,
+    breakable,
+    colback=LightGrey,
+    colframe=PracticeGreen,
+    title=\textbf{Vocabulary},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Writing practice
+% ------------------------------------------------------------
+
+\newtcolorbox{writingpractice}{
+    enhanced,
+    breakable,
+    colback=VeryLightBlue,
+    colframe=BritishNavy,
+    title=\textbf{Writing Practice},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Assessment
+% ------------------------------------------------------------
+
+\newtcolorbox{assessmentbox}{
+    enhanced,
+    breakable,
+    colback=LightGrey,
+    colframe=BritishRed,
+    title=\textbf{Assessment},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ------------------------------------------------------------
+% Important note
+% ------------------------------------------------------------
+
+\newtcolorbox{importantnote}{
+    enhanced,
+    breakable,
+    colback=LightGrey,
+    colframe=WarningOrange,
+    title=\textbf{Important},
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.8pt
+}
+
+% ============================================================
+% QUOTES AND DIALOGUES
+% ============================================================
+
+\usepackage{csquotes}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+
+% IPA shortcut
+\newcommand{\ipa}[1]{%
+    \textipa{/#1/}%
+}
+
+% British English term
+\newcommand{\british}[1]{%
+    \textbf{\textcolor{BritishNavy}{#1}}%
+}
+
+% American English comparison
+\newcommand{\american}[1]{%
+    \textcolor{MediumGrey}{#1}%
+}
+
+% Key vocabulary
+\newcommand{\keyword}[1]{%
+    \textbf{\textcolor{BritishRed}{#1}}%
+}
+
+% Pronunciation target
+\newcommand{\rptarget}[1]{%
+    \textbf{\textcolor{BritishRed}{#1}}%
+}
+
+% ============================================================
+% DAY / WEEK / MONTH COMMANDS
+% ============================================================
+
+\newcommand{\monthheading}[2]{%
+    \chapter{Month #1: #2}
+}
+
+\newcommand{\weekheading}[2]{%
+    \section{Week #1: #2}
+}
+
+\newcommand{\dayheading}[2]{%
+    \subsection{Day #1: #2}
+}
+
+% ============================================================
+% DAILY SESSION TEMPLATE
+% ============================================================
+
+\newcommand{\dailysession}[1]{%
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        colback=white,
+        colframe=BritishNavy,
+        title=\textbf{Daily Session — #1},
+        fonttitle=\bfseries,
+        arc=2mm,
+        boxrule=1pt
+    ]
+    \textbf{Recommended duration: 120 minutes}
+
+    \medskip
+
+    \begin{tabularx}{\textwidth}{
+        >{\bfseries}p{3.8cm} X
+    }
+    Pronunciation / Phonetics & 30 minutes \\
+    Speaking / Conversation   & 30 minutes \\
+    Listening / Comprehension & 25 minutes \\
+    Grammar / Vocabulary      & 20 minutes \\
+    Writing / Reflection      & 15 minutes \\
+    \end{tabularx}
+    \end{tcolorbox}
+}
+
+% ============================================================
+% CEFR LEVEL COMMAND
+% ============================================================
+
+\newcommand{\cefr}[1]{%
+    \textbf{\textcolor{BritishNavy}{CEFR #1}}%
+}
+
+% ============================================================
+% CHECKBOXES
+% ============================================================
+
+\usepackage{amssymb}
+
+\newcommand{\checkbox}{%
+    $\square$
+}
+
+\newcommand{\checkedbox}{%
+    $\boxtimes$
+}
+
+% ============================================================
+% DATE / CALENDAR SUPPORT
+% ============================================================
+
+\usepackage{datetime2}
+
+% ============================================================
+% INDEX
+% ============================================================
+
+\usepackage{imakeidx}
+\makeindex[
+    title=Language and Pronunciation Index,
+    columns=2
+]
+
+% Usage:
+% pronunciation\index{pronunciation}
+% schwa\index{schwa}
+
+% ============================================================
+% GLOSSARY / ACRONYMS
+% ============================================================
+
+\usepackage[
+    acronym,
+    toc,
+    nonumberlist
+]{glossaries}
+
+\makeglossaries
+
+\newacronym{rp}{RP}{Received Pronunciation}
+\newacronym{ipa}{IPA}{International Phonetic Alphabet}
+\newacronym{cefr}{CEFR}{Common European Framework of Reference for Languages}
+
+% ============================================================
+% BIBLIOGRAPHY
+% ============================================================
+
+\usepackage[
+    backend=biber,
+    style=apa,
+    sorting=nyt
+]{biblatex}
+
+% Uncomment when the bibliography file exists:
+% \addbibresource{references.bib}
+
+% ============================================================
+% TITLE INFORMATION
+% ============================================================
+
+\title{
+    \Huge
+    \textbf{
+        British English Proficiency Programme
+    }
+    \\[0.5cm]
+    \Large
+    A 12-Month Intensive Programme
+    \\[0.2cm]
+    \large
+    Received Pronunciation, Speaking, Listening,
+    Grammar, Vocabulary and Academic Writing
+}
+
+\author{
+    Personal Language Development Programme
+}
+
+\date{
+    \today
+}
+
+% ============================================================
+% DOCUMENT
+% ============================================================
+
+\begin{document}
+\fi
+% ============================================================
+% FRONT MATTER
+% ============================================================
+
+\frontmatter
+
+\maketitle
+
+\cleardoublepage
+
+% ------------------------------------------------------------
+% OPTIONAL INTRODUCTORY PAGES
+% ------------------------------------------------------------
+
+% \chapter*{Programme Introduction}
+% \addcontentsline{toc}{chapter}{Programme Introduction}
+%
+% Insert programme introduction here.
+
+% \chapter*{How to Use This Programme}
+% \addcontentsline{toc}{chapter}{How to Use This Programme}
+%
+% Insert usage instructions here.
+
+% ============================================================
+% TABLE OF CONTENTS
+% ============================================================
+
+\cleardoublepage
+
+\tableofcontents
+
+\cleardoublepage
+
+% Optional additional lists:
+%
+\listoffigures
+\cleardoublepage
+%
+\listoftables
+\cleardoublepage
+
+% ============================================================
+% MAIN MATTER
+% ============================================================
+
+\mainmatter
+
+% ================================================================
+% 12-MONTH BRITISH ENGLISH PROFICIENCY PROGRAMME
+% Master Table of Contents
+%
+% Duration: 12 months
+% Daily study: 2 hours
+% Approximate annual workload: 700--730 hours
+%
+% Primary priorities:
+%   1. Speaking
+%   2. Pronunciation and phonetics
+%   3. Listening comprehension
+%   4. Professional communication
+%   5. Vocabulary development
+%   6. Grammar
+%   7. Academic and professional writing
+%
+% Target pronunciation model:
+% Contemporary Standard British English / Modern RP
+% ================================================================
+
+
+\frontmatter
+
+\include{chapters/programme-preface}
+\include{chapters/how-to-use-programme}
+
+% \chapter*{Programme Philosophy}
+
+% \chapter*{The 12-Month Learning Contract}
+
+% \chapter*{Expected Outcomes}
+
+% \chapter*{Initial Learner Profile}
+
+% \chapter*{Baseline Diagnostic Assessment}
+
+% \chapter*{CEFR Alignment and Proficiency Targets}
+
+% \chapter*{British English and Received Pronunciation Framework}
+
+% \chapter*{How Daily Two-Hour Sessions Are Structured}
+
+% \chapter*{Assessment, Feedback and Progress Tracking}
+
+% \chapter*{Symbols, Abbreviations and IPA Conventions}
+
+\tableofcontents
+
+
+% ================================================================
+\mainmatter
+% ================================================================
+
+
+% ================================================================
+% PART I — PROGRAMME ARCHITECTURE
+% ================================================================
+
+\part{Programme Architecture and Learning Methodology}
+
+% \include{chapters/programme-overview}
+
+% \include{chapters/two-hours-plan}
+
+% \include{chapters/learning-techniques}
+
+
+% ================================================================
+% PART II — PRONUNCIATION
+% ================================================================
+
+\part{British Pronunciation, Phonetics and Contemporary RP}
+
+% \include{chapters/british-pronunciation}
+
+\include{chapters/british-english-vowels}
+
+% \include{chapters/british-english-consonants}
+
+% \chapter{High-Priority Pronunciation Contrasts}
+
+% \section{/ɪ/ Versus /iː/}
+% \section{/æ/ Versus /ʌ/}
+% \section{/æ/ Versus /ɑː/}
+% \section{/ɒ/ Versus /ɔː/}
+% \section{/ʊ/ Versus /uː/}
+% \section{/b/ Versus /v/}
+% \section{/s/ Versus /z/}
+% \section{/ʃ/ Versus /tʃ/}
+% \section{/dʒ/ Versus /j/}
+% \section{/θ/ Versus /t/}
+% \section{/ð/ Versus /d/}
+% \section{/ŋ/ Versus /n/}
+% \section{Consonant Clusters}
+
+% \chapter{RP-Specific Features}
+
+% \section{Non-Rhoticity}
+% \section{Linking R}
+% \section{Intrusive R}
+% \section{The British LOT Vowel}
+% \section{The BATH Vowel}
+% \section{The GOAT Diphthong}
+% \section{Yod Preservation}
+% \section{Dark L}
+% \section{Glottalisation}
+% \section{T-Realisation}
+% \section{Aspiration}
+% \section{Devoicing}
+% \section{Assimilation}
+
+% \chapter{Word Stress}
+
+% \section{Primary Stress}
+% \section{Secondary Stress}
+% \section{Stress in Two-Syllable Words}
+% \section{Stress in Multisyllabic Words}
+% \section{Stress in Compound Words}
+% \section{Stress in Derived Words}
+% \section{Stress Changes Across Word Families}
+% \section{Stress in Technical Vocabulary}
+
+% \chapter{Sentence Stress and Rhythm}
+
+% \section{Stress-Timed Rhythm}
+% \section{Content Words}
+% \section{Function Words}
+% \section{Strong Forms}
+% \section{Weak Forms}
+% \section{Prominence}
+% \section{Contrastive Stress}
+% \section{Corrective Stress}
+% \section{Information Focus}
+
+% \chapter{Connected Speech}
+
+% \section{Linking}
+% \section{Assimilation}
+% \section{Elision}
+% \section{Reduction}
+% \section{Contractions}
+% \section{Resyllabification}
+% \section{Catenation}
+% \section{Weak Forms in Natural Speech}
+% \section{Sound Boundaries}
+% \section{Fast Speech Phenomena}
+
+% \chapter{British Intonation}
+
+% \section{Tone Units}
+% \section{Nuclear Stress}
+% \section{Falling Intonation}
+% \section{Rising Intonation}
+% \section{Fall-Rise Intonation}
+% \section{Rise-Fall Intonation}
+% \section{Intonation and Certainty}
+% \section{Intonation and Politeness}
+% \section{Intonation and Attitude}
+% \section{Intonation in Questions}
+% \section{Intonation in Meetings}
+% \section{Intonation in Presentations}
+
+% \chapter{Pronunciation Training Laboratory}
+
+% \section{Minimal Pair Drills}
+% \section{Articulation Drills}
+% \section{Back-Chaining}
+% \section{Sentence Repetition}
+% \section{Shadowing}
+% \section{Mirroring}
+% \section{Recording and Playback}
+% \section{Acoustic Comparison}
+% \section{IPA Dictation}
+% \section{Pronunciation Journaling}
+% \section{Weekly Pronunciation Tests}
+
+
+% % ================================================================
+% % PART III — LISTENING
+% % ================================================================
+
+% \part{Listening and Spoken-Language Comprehension}
+
+% \chapter{Listening Foundations}
+
+% \section{Bottom-Up Listening}
+% \section{Top-Down Listening}
+% \section{Predictive Listening}
+% \section{Listening for Gist}
+% \section{Listening for Detail}
+% \section{Listening for Specific Information}
+% \section{Inferential Listening}
+
+% \chapter{Decoding Natural British Speech}
+
+% \section{Recognising Weak Forms}
+% \section{Recognising Reduced Speech}
+% \section{Recognising Linking}
+% \section{Recognising Elision}
+% \section{Recognising Assimilation}
+% \section{Understanding Fast Speech}
+% \section{Recovering Unknown Words from Context}
+
+% \chapter{Listening Across British Accents}
+
+% \section{Contemporary RP}
+% \section{London and South-East England}
+% \section{Northern English Accents}
+% \section{Scottish English}
+% \section{Welsh English}
+% \section{Northern Irish English}
+% \section{International English in British Workplaces}
+
+% \chapter{Listening Contexts}
+
+% \section{Everyday Conversations}
+% \section{Telephone Calls}
+% \section{Video Calls}
+% \section{Workplace Conversations}
+% \section{Technical Discussions}
+% \section{Meetings}
+% \section{Presentations}
+% \section{Lectures}
+% \section{Interviews}
+% \section{Podcasts}
+% \section{News}
+% \section{Documentaries}
+
+% \chapter{Advanced Listening Training}
+
+% \section{Listening Without Subtitles}
+% \section{Listening with English Subtitles}
+% \section{Progressive Subtitle Removal}
+% \section{Dictation}
+% \section{Partial Transcription}
+% \section{Full Transcription}
+% \section{Listening and Note-Taking}
+% \section{Listening and Summarisation}
+% \section{Listening and Critical Analysis}
+
+
+% ================================================================
+% PART IV — SPEAKING
+% ================================================================
+
+\part{Speaking, Fluency and Idea Coordination}
+
+% \chapter{Building Spoken Fluency}
+
+% \section{Thinking in English}
+% \section{Moving Beyond Translation}
+% \section{Lexical Retrieval}
+% \section{Automaticity}
+% \section{Speech Chunking}
+% \section{Pausing Strategically}
+% \section{Reducing Hesitation}
+% \section{Repair Strategies}
+% \section{Self-Correction Without Losing Fluency}
+
+% \chapter{Structuring Ideas While Speaking}
+
+% \section{Opening an Idea}
+% \section{Providing Context}
+% \section{Giving the Main Point}
+% \section{Providing Supporting Details}
+% \section{Giving Examples}
+% \section{Explaining Causes}
+% \section{Explaining Consequences}
+% \section{Comparing Alternatives}
+% \section{Expressing Advantages and Disadvantages}
+% \section{Explaining Trade-Offs}
+% \section{Summarising}
+% \section{Concluding Clearly}
+
+% \chapter{Discourse Markers for Spoken English}
+
+% \section{Sequencing}
+% \section{Adding Information}
+% \section{Contrasting}
+% \section{Clarifying}
+% \section{Reformulating}
+% \section{Exemplifying}
+% \section{Generalising}
+% \section{Qualifying}
+% \section{Concluding}
+% \section{Changing Topic}
+% \section{Returning to a Previous Point}
+
+% \chapter{Spoken Explanation Frameworks}
+
+% \section{PREP: Point--Reason--Example--Point}
+% \section{What--Why--How}
+% \section{Problem--Cause--Solution}
+% \section{Situation--Action--Result}
+% \section{Claim--Evidence--Implication}
+% \section{Concept--Mechanism--Example}
+% \section{Past--Present--Future}
+% \section{Overview--Details--Summary}
+
+% \chapter{Explaining Complex Concepts}
+
+% \section{Defining Terminology}
+% \section{Explaining Processes}
+% \section{Explaining Systems}
+% \section{Explaining Architectures}
+% \section{Explaining Data}
+% \section{Explaining Algorithms}
+% \section{Explaining Models}
+% \section{Explaining Cause and Effect}
+% \section{Using Analogies}
+% \section{Using Examples}
+% \section{Adjusting Technical Depth to the Audience}
+% \section{Explaining the Same Idea at Three Complexity Levels}
+
+% \chapter{Impromptu Speaking}
+
+% \section{30-Second Responses}
+% \section{One-Minute Responses}
+% \section{Two-Minute Responses}
+% \section{Five-Minute Explanations}
+% \section{Random Topic Drills}
+% \section{Image-Based Speaking}
+% \section{Article-Based Speaking}
+% \section{Problem-Solution Speaking}
+% \section{Opinion Speaking}
+% \section{Technical Speaking}
+
+% \chapter{Conversation Management}
+
+% \section{Starting Conversations}
+% \section{Maintaining Conversations}
+% \section{Taking Turns}
+% \section{Holding the Floor}
+% \section{Yielding the Floor}
+% \section{Interrupting Politely}
+% \section{Responding to Interruptions}
+% \section{Showing Interest}
+% \section{Asking Follow-Up Questions}
+% \section{Changing Subjects}
+% \section{Ending Conversations Naturally}
+
+% \chapter{Clarification and Communication Repair}
+
+% \section{Asking Someone to Repeat}
+% \section{Asking Someone to Slow Down}
+% \section{Checking Understanding}
+% \section{Confirming Interpretation}
+% \section{Rephrasing}
+% \section{Correcting Misunderstandings}
+% \section{Handling Unknown Vocabulary}
+% \section{Buying Time While Speaking}
+
+
+% ================================================================
+% PART V — PROFESSIONAL COMMUNICATION
+% ================================================================
+
+\part{Professional English and Meetings}
+
+% \chapter{Professional Communication Fundamentals}
+
+% \section{Professional Register}
+% \section{Formal Versus Informal English}
+% \section{Directness and Indirectness}
+% \section{British Politeness Strategies}
+% \section{Diplomatic Language}
+% \section{Hedging}
+% \section{Professional Small Talk}
+
+% \chapter{Meeting English}
+
+% \section{Opening a Meeting}
+% \section{Setting the Agenda}
+% \section{Introducing Participants}
+% \section{Presenting an Update}
+% \section{Reporting Progress}
+% \section{Explaining Problems}
+% \section{Proposing Solutions}
+% \section{Expressing Opinions}
+% \section{Agreeing}
+% \section{Partially Agreeing}
+% \section{Disagreeing Diplomatically}
+% \section{Challenging an Assumption}
+% \section{Clarifying a Point}
+% \section{Asking Technical Questions}
+% \section{Managing Interruptions}
+% \section{Returning to the Agenda}
+% \section{Summarising Decisions}
+% \section{Assigning Actions}
+% \section{Closing the Meeting}
+
+% \chapter{Participating in Technical Meetings}
+
+% \section{Describing Architecture}
+% \section{Describing Data Pipelines}
+% \section{Explaining Dependencies}
+% \section{Explaining Risks}
+% \section{Explaining Constraints}
+% \section{Explaining Assumptions}
+% \section{Discussing Alternatives}
+% \section{Explaining Technical Debt}
+% \section{Discussing Performance}
+% \section{Discussing Scalability}
+% \section{Making Recommendations}
+
+% \chapter{Meeting Simulation Laboratory}
+
+% \section{Daily Stand-Up}
+% \section{Sprint Planning}
+% \section{Technical Design Review}
+% \section{Architecture Review}
+% \section{Project Status Meeting}
+% \section{Problem-Solving Meeting}
+% \section{Client Meeting}
+% \section{Management Meeting}
+% \section{Research Meeting}
+% \section{Academic Supervision Meeting}
+
+% \chapter{Presentation Skills}
+
+% \section{Presentation Structure}
+% \section{Opening Strongly}
+% \section{Signposting}
+% \section{Explaining Visuals}
+% \section{Explaining Charts}
+% \section{Explaining Tables}
+% \section{Explaining Architecture Diagrams}
+% \section{Handling Questions}
+% \section{Handling Difficult Questions}
+% \section{Admitting Uncertainty Professionally}
+% \section{Summarising}
+% \section{Closing}
+% \section{Presentation Pronunciation}
+% \section{Presentation Intonation}
+% \section{Presentation Pace}
+
+% \chapter{Negotiation and Persuasion}
+
+% \section{Making Proposals}
+% \section{Building Arguments}
+% \section{Giving Evidence}
+% \section{Expressing Reservations}
+% \section{Negotiating Alternatives}
+% \section{Seeking Compromise}
+% \section{Rejecting an Idea Diplomatically}
+% \section{Persuading Without Sounding Aggressive}
+
+% \chapter{Professional Networking}
+
+% \section{Introducing Yourself}
+% \section{Explaining Your Professional Background}
+% \section{Describing Your Expertise}
+% \section{Professional Small Talk}
+% \section{Conference Conversations}
+% \section{Networking Events}
+% \section{Following Up}
+
+
+% ================================================================
+% PART VI — DAILY-LIFE ENGLISH
+% ================================================================
+
+\part{English for Everyday Life}
+
+% \chapter{Everyday Social Communication}
+
+% \section{Introductions}
+% \section{Family}
+% \section{Friends}
+% \section{Home}
+% \section{Neighbourhood}
+% \section{Weather}
+% \section{Hobbies}
+% \section{Entertainment}
+% \section{Food}
+% \section{Shopping}
+% \section{Travel}
+% \section{Transport}
+% \section{Health and Well-Being}
+% \section{Education}
+% \section{Technology}
+% \section{News and Current Affairs}
+
+% \chapter{Everyday Functional English}
+
+% \section{Making Requests}
+% \section{Asking for Help}
+% \section{Giving Directions}
+% \section{Making Appointments}
+% \section{Making Reservations}
+% \section{Ordering Food}
+% \section{Shopping}
+% \section{Returning Products}
+% \section{Telephone Calls}
+% \section{Dealing with Services}
+% \section{Complaints}
+% \section{Emergencies}
+
+% \chapter{British Cultural Communication}
+
+% \section{British Politeness}
+% \section{Understatement}
+% \section{Indirectness}
+% \section{Humour}
+% \section{Sarcasm}
+% \section{Small Talk}
+% \section{Social Distance}
+% \section{Turn-Taking}
+% \section{Common British Expressions}
+
+
+% ================================================================
+% PART VII — VOCABULARY
+% ================================================================
+
+\part{Vocabulary, Collocations and Natural Expression}
+
+% \chapter{Vocabulary Learning Methodology}
+
+% \section{Active Versus Passive Vocabulary}
+% \section{Vocabulary Depth}
+% \section{Word Families}
+% \section{Collocations}
+% \section{Chunks}
+% \section{Lexical Bundles}
+% \section{Semantic Networks}
+% \section{Spaced-Repetition Systems}
+
+% \chapter{High-Frequency Vocabulary}
+
+% \section{Core Verbs}
+% \section{Core Nouns}
+% \section{Core Adjectives}
+% \section{Core Adverbs}
+% \section{Functional Vocabulary}
+
+% \chapter{Collocations}
+
+% \section{Verb--Noun Collocations}
+% \section{Adjective--Noun Collocations}
+% \section{Adverb--Adjective Collocations}
+% \section{Verb--Preposition Collocations}
+% \section{Noun--Preposition Collocations}
+
+% \chapter{Phrasal Verbs}
+
+% \section{Everyday Phrasal Verbs}
+% \section{Professional Phrasal Verbs}
+% \section{Academic Alternatives to Phrasal Verbs}
+% \section{Separable and Inseparable Phrasal Verbs}
+
+% \chapter{Idiomatic English}
+
+% \section{Common Idioms}
+% \section{British Idioms}
+% \section{Conversational Expressions}
+% \section{Professional Expressions}
+% \section{Avoiding Overuse of Idioms}
+
+% \chapter{Academic Vocabulary}
+
+% \section{Academic Word Families}
+% \section{Research Vocabulary}
+% \section{Argumentation Vocabulary}
+% \section{Analytical Vocabulary}
+% \section{Cause-and-Effect Vocabulary}
+% \section{Comparison Vocabulary}
+% \section{Evaluation Vocabulary}
+
+% \chapter{Technical and Professional Vocabulary}
+
+% \section{Data Science}
+% \section{Data Engineering}
+% \section{Software Engineering}
+% \section{Cloud Computing}
+% \section{Artificial Intelligence}
+% \section{Machine Learning}
+% \section{Research}
+% \section{Project Management}
+% \section{Business Communication}
+
+
+% ================================================================
+% PART VIII — GRAMMAR
+% ================================================================
+
+\part{Grammar for Accurate and Sophisticated Communication}
+
+% \chapter{Grammar Diagnostic Review}
+
+% \section{Word Classes}
+% \section{Sentence Structure}
+% \section{Subject and Predicate}
+% \section{Objects and Complements}
+% \section{Phrases and Clauses}
+
+% \chapter{The English Verb System}
+
+% \section{Present Simple}
+% \section{Present Continuous}
+% \section{Past Simple}
+% \section{Past Continuous}
+% \section{Present Perfect}
+% \section{Present Perfect Continuous}
+% \section{Past Perfect}
+% \section{Past Perfect Continuous}
+% \section{Future Forms}
+% \section{Future Continuous}
+% \section{Future Perfect}
+
+% \chapter{Aspect and Time}
+
+% \section{Simple Aspect}
+% \section{Progressive Aspect}
+% \section{Perfect Aspect}
+% \section{Perfect Progressive Aspect}
+% \section{Narrative Tenses}
+
+% \chapter{Modal Verbs}
+
+% \section{Ability}
+% \section{Possibility}
+% \section{Probability}
+% \section{Permission}
+% \section{Obligation}
+% \section{Advice}
+% \section{Deduction}
+% \section{Speculation}
+% \section{Modal Perfects}
+
+% \chapter{Conditionals}
+
+% \section{Zero Conditional}
+% \section{First Conditional}
+% \section{Second Conditional}
+% \section{Third Conditional}
+% \section{Mixed Conditionals}
+% \section{Alternative Conditional Structures}
+
+% \chapter{Passive Voice}
+
+% \section{Passive Construction}
+% \section{Passive Across Tenses}
+% \section{Passive in Academic Writing}
+% \section{Passive in Technical Writing}
+
+% \chapter{Reported Speech}
+
+% \section{Statements}
+% \section{Questions}
+% \section{Commands}
+% \section{Reporting Verbs}
+% \section{Academic Reporting}
+
+% \chapter{Relative Clauses}
+
+% \section{Defining Clauses}
+% \section{Non-Defining Clauses}
+% \section{Reduced Relative Clauses}
+
+% \chapter{Articles and Determiners}
+
+% \section{The Definite Article}
+% \section{The Indefinite Article}
+% \section{Zero Article}
+% \section{Quantifiers}
+% \section{Determiners}
+
+% \chapter{Prepositions}
+
+% \section{Time}
+% \section{Place}
+% \section{Movement}
+% \section{Dependent Prepositions}
+% \section{Academic Prepositional Phrases}
+
+% \chapter{Advanced Sentence Structures}
+
+% \section{Coordination}
+% \section{Subordination}
+% \section{Nominalisation}
+% \section{Participle Clauses}
+% \section{Cleft Sentences}
+% \section{Inversion}
+% \section{Fronting}
+% \section{Emphasis}
+% \section{Ellipsis}
+
+% \chapter{Grammar for Spoken English}
+
+% \section{Natural Spoken Grammar}
+% \section{Ellipsis}
+% \section{Dislocation}
+% \section{Conversation-Specific Structures}
+% \section{Grammar and Fluency}
+
+% \chapter{Error Correction Programme}
+
+% \section{Error Classification}
+% \section{Persistent Errors}
+% \section{Grammar Error Log}
+% \section{Weekly Error Review}
+% \section{Monthly Accuracy Audits}
+
+
+% ================================================================
+% PART IX — READING
+% ================================================================
+
+\part{Reading and Comprehension}
+
+% \chapter{Reading Strategies}
+
+% \section{Skimming}
+% \section{Scanning}
+% \section{Close Reading}
+% \section{Predicting}
+% \section{Inferring Meaning}
+% \section{Identifying Main Ideas}
+% \section{Identifying Supporting Evidence}
+% \section{Recognising Argument Structure}
+
+% \chapter{Reading Genres}
+
+% \section{News Articles}
+% \section{Magazine Articles}
+% \section{Technical Documentation}
+% \section{Business Reports}
+% \section{Research Papers}
+% \section{Academic Textbooks}
+% \section{Essays}
+% \section{Opinion Pieces}
+
+% \chapter{Critical Reading}
+
+% \section{Fact Versus Opinion}
+% \section{Claims and Evidence}
+% \section{Assumptions}
+% \section{Bias}
+% \section{Logical Structure}
+% \section{Evaluating Sources}
+% \section{Synthesising Multiple Sources}
+
+
+% ================================================================
+% PART X — WRITING
+% ================================================================
+
+\part{Academic and Professional Writing}
+
+% \chapter{Writing Foundations}
+
+% \section{Sentence Accuracy}
+% \section{Sentence Variety}
+% \section{Paragraph Structure}
+% \section{Unity}
+% \section{Coherence}
+% \section{Cohesion}
+
+% \chapter{Academic Style}
+
+% \section{Formal Register}
+% \section{Academic Tone}
+% \section{Precision}
+% \section{Conciseness}
+% \section{Objectivity}
+% \section{Hedging}
+% \section{Cautious Claims}
+% \section{Avoiding Informal Language}
+
+% \chapter{Paragraph Development}
+
+% \section{Topic Sentences}
+% \section{Supporting Evidence}
+% \section{Examples}
+% \section{Analysis}
+% \section{Concluding Sentences}
+% \section{Transitions}
+
+% \chapter{Academic Argumentation}
+
+% \section{Claims}
+% \section{Evidence}
+% \section{Reasoning}
+% \section{Counterarguments}
+% \section{Rebuttals}
+% \section{Qualification}
+% \section{Synthesis}
+
+% \chapter{Academic Writing Processes}
+
+% \section{Planning}
+% \section{Outlining}
+% \section{Drafting}
+% \section{Revising}
+% \section{Editing}
+% \section{Proofreading}
+
+% \chapter{Paraphrasing and Summarising}
+
+% \section{Lexical Paraphrasing}
+% \section{Structural Paraphrasing}
+% \section{Avoiding Patchwriting}
+% \section{Summarising Articles}
+% \section{Synthesising Sources}
+
+% \chapter{Research Writing}
+
+% \section{Abstracts}
+% \section{Introductions}
+% \section{Literature Reviews}
+% \section{Methodology}
+% \section{Results}
+% \section{Discussion}
+% \section{Conclusions}
+% \section{Limitations}
+% \section{Future Work}
+
+% \chapter{Professional Writing}
+
+% \section{Emails}
+% \section{Meeting Notes}
+% \section{Minutes}
+% \section{Technical Documentation}
+% \section{Executive Summaries}
+% \section{Project Reports}
+% \section{Technical Reports}
+% \section{Recommendations}
+% \section{Proposals}
+
+% \chapter{Editing and Style Improvement}
+
+% \section{Removing Redundancy}
+% \section{Improving Clarity}
+% \section{Increasing Precision}
+% \section{Improving Flow}
+% \section{Avoiding Ambiguity}
+% \section{British Spelling}
+% \section{British Punctuation}
+% \section{Professional Proofreading}
+
+
+% ================================================================
+% PART XI — MONTH-BY-MONTH PROGRAMME
+% ================================================================
+
+\part{The Twelve-Month Intensive Programme}
+
+
+% ------------------------------------------------
+% MONTH 1
+% ------------------------------------------------
+
+% \chapter{Month 1 --- Foundations and Baseline Correction}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{IPA Foundations}
+% \subsection{Articulatory Awareness}
+% \subsection{Core British Vowels}
+% \subsection{Core Consonants}
+
+% \section{Speaking Focus}
+% \subsection{Basic Fluency}
+% \subsection{Sentence Formation}
+% \subsection{Self-Introduction}
+% \subsection{Describing Daily Activities}
+
+% \section{Listening Focus}
+% \subsection{Slow Standard British English}
+% \subsection{Word Boundary Recognition}
+
+% \section{Grammar Focus}
+% \subsection{Sentence Structure}
+% \subsection{Present and Past Forms}
+
+% \section{Vocabulary Focus}
+% \subsection{Core High-Frequency Vocabulary}
+% \subsection{Daily-Life Collocations}
+
+% \section{Writing Focus}
+% \subsection{Accurate Sentences}
+% \subsection{Basic Paragraphs}
+
+% \section{Weekly Programme}
+% \subsection{Week 1: Diagnostic and Sound Awareness}
+% \subsection{Week 2: Core Vowels}
+% \subsection{Week 3: Core Consonants}
+% \subsection{Week 4: Integration and Assessment}
+
+% \section{Month 1 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 2
+% ------------------------------------------------
+
+% \chapter{Month 2 --- British Vowels and Speech Clarity}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Short and Long Vowels}
+% \subsection{Diphthongs}
+% \subsection{Vowel Length}
+% \subsection{Minimal Pairs}
+
+% \section{Speaking Focus}
+% \subsection{Descriptions}
+% \subsection{Narrating Personal Experiences}
+
+% \section{Listening Focus}
+% \subsection{Vowel Recognition}
+% \subsection{Dictation}
+
+% \section{Grammar Focus}
+% \subsection{Perfect Tenses}
+% \subsection{Aspect}
+
+% \section{Vocabulary Focus}
+% \subsection{Word Families}
+% \subsection{Collocations}
+
+% \section{Writing Focus}
+% \subsection{Paragraph Organisation}
+
+% \section{Weekly Programme}
+% \subsection{Week 5: Front Vowels}
+% \subsection{Week 6: Central and Back Vowels}
+% \subsection{Week 7: Diphthongs}
+% \subsection{Week 8: Integration and Assessment}
+
+% \section{Month 2 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 3
+% ------------------------------------------------
+
+% \chapter{Month 3 --- Consonants, Word Stress and Fluency}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Problematic Consonants}
+% \subsection{Consonant Clusters}
+% \subsection{Word Stress}
+
+% \section{Speaking Focus}
+% \subsection{One-Minute Speaking}
+% \subsection{Two-Minute Speaking}
+% \subsection{Retelling}
+
+% \section{Listening Focus}
+% \subsection{Natural-Speed Speech}
+% \subsection{Stress Recognition}
+
+% \section{Grammar Focus}
+% \subsection{Modal Verbs}
+% \subsection{Conditionals}
+
+% \section{Vocabulary Focus}
+% \subsection{Phrasal Verbs}
+% \subsection{Professional Collocations}
+
+% \section{Writing Focus}
+% \subsection{Coherence and Cohesion}
+
+% \section{Weekly Programme}
+% \subsection{Week 9: Fricatives and Affricates}
+% \subsection{Week 10: Approximants and Clusters}
+% \subsection{Week 11: Word Stress}
+% \subsection{Week 12: Integration and Assessment}
+
+% \section{Quarter 1 Comprehensive Assessment}
+
+
+% ------------------------------------------------
+% MONTH 4
+% ------------------------------------------------
+
+% \chapter{Month 4 --- Connected Speech and Listening Breakthrough}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Weak Forms}
+% \subsection{Linking}
+% \subsection{Assimilation}
+% \subsection{Elision}
+
+% \section{Speaking Focus}
+% \subsection{Natural Connected Speech}
+% \subsection{Reducing Over-Articulation}
+
+% \section{Listening Focus}
+% \subsection{Decoding Connected Speech}
+% \subsection{Subtitle Reduction}
+
+% \section{Grammar Focus}
+% \subsection{Relative Clauses}
+% \subsection{Passive Voice}
+
+% \section{Vocabulary Focus}
+% \subsection{Lexical Chunks}
+
+% \section{Writing Focus}
+% \subsection{Academic Paragraphs}
+
+% \section{Weekly Programme}
+% \subsection{Week 13: Weak Forms}
+% \subsection{Week 14: Linking}
+% \subsection{Week 15: Assimilation and Elision}
+% \subsection{Week 16: Integration and Assessment}
+
+% \section{Month 4 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 5
+% ------------------------------------------------
+
+% \chapter{Month 5 --- Rhythm, Intonation and Expressive Speech}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Sentence Stress}
+% \subsection{Prominence}
+% \subsection{Rhythm}
+% \subsection{Intonation}
+
+% \section{Speaking Focus}
+% \subsection{Expressing Attitude}
+% \subsection{Emphasis}
+% \subsection{Persuasion}
+
+% \section{Listening Focus}
+% \subsection{Recognising Attitude}
+% \subsection{Recognising Speaker Intent}
+
+% \section{Grammar Focus}
+% \subsection{Reported Speech}
+% \subsection{Advanced Modality}
+
+% \section{Vocabulary Focus}
+% \subsection{Discourse Markers}
+
+% \section{Writing Focus}
+% \subsection{Argument Development}
+
+% \section{Weekly Programme}
+% \subsection{Week 17: Sentence Stress}
+% \subsection{Week 18: Rhythm}
+% \subsection{Week 19: Intonation}
+% \subsection{Week 20: Integration and Assessment}
+
+% \section{Month 5 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 6
+% ------------------------------------------------
+
+% \chapter{Month 6 --- Meetings and Professional Communication}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Professional Speech}
+% \subsection{Meeting Intonation}
+
+% \section{Speaking Focus}
+% \subsection{Giving Updates}
+% \subsection{Explaining Problems}
+% \subsection{Making Recommendations}
+% \subsection{Agreeing and Disagreeing}
+
+% \section{Listening Focus}
+% \subsection{Meeting Comprehension}
+% \subsection{Multiple Speakers}
+
+% \section{Grammar Focus}
+% \subsection{Hedging}
+% \subsection{Diplomatic Structures}
+
+% \section{Vocabulary Focus}
+% \subsection{Meeting Vocabulary}
+% \subsection{Business Collocations}
+
+% \section{Writing Focus}
+% \subsection{Professional Emails}
+% \subsection{Meeting Summaries}
+
+% \section{Weekly Programme}
+% \subsection{Week 21: Meeting Fundamentals}
+% \subsection{Week 22: Discussion Management}
+% \subsection{Week 23: Technical Meetings}
+% \subsection{Week 24: Full Meeting Simulations}
+
+% \section{Quarter 2 Comprehensive Assessment}
+% \section{Mid-Year Examination}
+
+
+% ------------------------------------------------
+% MONTH 7
+% ------------------------------------------------
+
+% \chapter{Month 7 --- Explaining Complex and Technical Concepts}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Technical Vocabulary}
+% \subsection{Multisyllabic Word Stress}
+
+% \section{Speaking Focus}
+% \subsection{Definitions}
+% \subsection{Processes}
+% \subsection{Systems}
+% \subsection{Architectures}
+% \subsection{Algorithms}
+% \subsection{Models}
+
+% \section{Listening Focus}
+% \subsection{Technical Presentations}
+% \subsection{Lectures}
+
+% \section{Grammar Focus}
+% \subsection{Complex Sentences}
+% \subsection{Subordination}
+
+% \section{Vocabulary Focus}
+% \subsection{Technical Vocabulary}
+% \subsection{Academic Vocabulary}
+
+% \section{Writing Focus}
+% \subsection{Technical Explanations}
+
+% \section{Weekly Programme}
+% \subsection{Week 25: Definitions and Concepts}
+% \subsection{Week 26: Processes}
+% \subsection{Week 27: Systems and Architectures}
+% \subsection{Week 28: Technical Presentation}
+
+% \section{Month 7 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 8
+% ------------------------------------------------
+
+% \chapter{Month 8 --- Argumentation, Discussion and Critical Thinking}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Contrastive Stress}
+% \subsection{Persuasive Intonation}
+
+% \section{Speaking Focus}
+% \subsection{Expressing Opinions}
+% \subsection{Building Arguments}
+% \subsection{Counterarguments}
+% \subsection{Debate}
+% \subsection{Negotiation}
+
+% \section{Listening Focus}
+% \subsection{Arguments}
+% \subsection{Debates}
+% \subsection{Interviews}
+
+% \section{Grammar Focus}
+% \subsection{Advanced Conditionals}
+% \subsection{Inversion}
+% \subsection{Emphasis}
+
+% \section{Vocabulary Focus}
+% \subsection{Argumentation Vocabulary}
+% \subsection{Evaluation Vocabulary}
+
+% \section{Writing Focus}
+% \subsection{Academic Argumentation}
+
+% \section{Weekly Programme}
+% \subsection{Week 29: Claims and Evidence}
+% \subsection{Week 30: Counterarguments}
+% \subsection{Week 31: Debate and Negotiation}
+% \subsection{Week 32: Integration and Assessment}
+
+% \section{Month 8 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 9
+% ------------------------------------------------
+
+% \chapter{Month 9 --- Academic Communication}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Academic Speech}
+% \subsection{Lecture and Presentation Delivery}
+
+% \section{Speaking Focus}
+% \subsection{Explaining Research}
+% \subsection{Presenting Results}
+% \subsection{Discussing Evidence}
+
+% \section{Listening Focus}
+% \subsection{Academic Lectures}
+% \subsection{Research Presentations}
+
+% \section{Grammar Focus}
+% \subsection{Nominalisation}
+% \subsection{Academic Structures}
+
+% \section{Vocabulary Focus}
+% \subsection{Academic Word Families}
+% \subsection{Research Collocations}
+
+% \section{Writing Focus}
+% \subsection{Research Paragraphs}
+% \subsection{Summaries}
+% \subsection{Literature Synthesis}
+
+% \section{Weekly Programme}
+% \subsection{Week 33: Academic Register}
+% \subsection{Week 34: Research Communication}
+% \subsection{Week 35: Academic Presentations}
+% \subsection{Week 36: Integration and Assessment}
+
+% \section{Quarter 3 Comprehensive Assessment}
+
+
+% ------------------------------------------------
+% MONTH 10
+% ------------------------------------------------
+
+% \chapter{Month 10 --- Advanced Fluency and Spontaneous Communication}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Automatic Connected Speech}
+% \subsection{Accent Stabilisation}
+
+% \section{Speaking Focus}
+% \subsection{Impromptu Speaking}
+% \subsection{Extended Responses}
+% \subsection{Spontaneous Discussion}
+% \subsection{Storytelling}
+
+% \section{Listening Focus}
+% \subsection{Native-Speed Content}
+% \subsection{Accent Variation}
+
+% \section{Grammar Focus}
+% \subsection{Advanced Spoken Grammar}
+
+% \section{Vocabulary Focus}
+% \subsection{Idiomatic Language}
+% \subsection{Natural Collocations}
+
+% \section{Writing Focus}
+% \subsection{Advanced Editing}
+
+% \section{Weekly Programme}
+% \subsection{Week 37: Automaticity}
+% \subsection{Week 38: Impromptu Speaking}
+% \subsection{Week 39: Extended Conversation}
+% \subsection{Week 40: Integration and Assessment}
+
+% \section{Month 10 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 11
+% ------------------------------------------------
+
+% \chapter{Month 11 --- Executive and High-Level Professional Communication}
+
+% \section{Monthly Objectives}
+% \section{Pronunciation Focus}
+% \subsection{Authority and Confidence}
+% \subsection{Pacing and Emphasis}
+
+% \section{Speaking Focus}
+% \subsection{Executive Summaries}
+% \subsection{Strategic Discussions}
+% \subsection{Recommendations}
+% \subsection{Risk Communication}
+% \subsection{Stakeholder Communication}
+% \subsection{Leadership Communication}
+
+% \section{Listening Focus}
+% \subsection{Executive Meetings}
+% \subsection{Complex Discussions}
+
+% \section{Grammar Focus}
+% \subsection{Precision and Nuance}
+
+% \section{Vocabulary Focus}
+% \subsection{Strategic Vocabulary}
+% \subsection{Leadership Vocabulary}
+
+% \section{Writing Focus}
+% \subsection{Executive Reports}
+% \subsection{Professional Recommendations}
+
+% \section{Weekly Programme}
+% \subsection{Week 41: Executive Communication}
+% \subsection{Week 42: Strategic Discussion}
+% \subsection{Week 43: Persuasion and Leadership}
+% \subsection{Week 44: Integration and Assessment}
+
+% \section{Month 11 Assessment}
+
+
+% ------------------------------------------------
+% MONTH 12
+% ------------------------------------------------
+
+% \chapter{Month 12 --- Mastery, Integration and Independent Communication}
+
+% \section{Monthly Objectives}
+
+% \section{Pronunciation Mastery}
+% \subsection{Accent Consistency}
+% \subsection{Residual Error Correction}
+% \subsection{Natural Rhythm}
+% \subsection{Natural Intonation}
+
+% \section{Speaking Mastery}
+% \subsection{Extended Technical Explanation}
+% \subsection{Professional Discussion}
+% \subsection{Impromptu Speaking}
+% \subsection{Debate}
+% \subsection{Presentation}
+% \subsection{Everyday Conversation}
+
+% \section{Listening Mastery}
+% \subsection{Native-Speed British English}
+% \subsection{Multiple Accents}
+% \subsection{Complex Technical Content}
+
+% \section{Vocabulary Mastery}
+% \subsection{Lexical Precision}
+% \subsection{Collocational Accuracy}
+% \subsection{Register Control}
+
+% \section{Grammar Mastery}
+% \subsection{Accuracy}
+% \subsection{Complexity}
+% \subsection{Automaticity}
+
+% \section{Writing Mastery}
+% \subsection{Academic Writing}
+% \subsection{Professional Writing}
+% \subsection{Independent Editing}
+
+% \section{Weekly Programme}
+% \subsection{Week 45: Pronunciation Consolidation}
+% \subsection{Week 46: Professional Communication Consolidation}
+% \subsection{Week 47: Academic Communication Consolidation}
+% \subsection{Week 48: Full-Skills Integration}
+% \subsection{Week 49: Mock Proficiency Assessment}
+% \subsection{Week 50: Targeted Remediation}
+% \subsection{Week 51: Capstone Project}
+% \subsection{Week 52: Final Examination}
+
+% \section{Final Comprehensive Assessment}
+
+
+% ================================================================
+% PART XII — INTERACTIVE TRAINING
+% ================================================================
+
+\part{Interactive Practice and Simulation System}
+
+% \chapter{Guided Conversation Programme}
+
+% \section{A1--A2 Conversation Topics}
+% \section{B1 Conversation Topics}
+% \section{B2 Conversation Topics}
+% \section{C1 Conversation Topics}
+% \section{Professional Conversation Topics}
+% \section{Academic Conversation Topics}
+% \section{Technical Conversation Topics}
+
+% \chapter{Role-Play Library}
+
+% \section{Daily-Life Role-Plays}
+% \section{Workplace Role-Plays}
+% \section{Meeting Role-Plays}
+% \section{Management Role-Plays}
+% \section{Academic Role-Plays}
+% \section{Technical Role-Plays}
+% \section{Problem-Solving Role-Plays}
+% \section{Conflict-Resolution Role-Plays}
+
+% \chapter{Question-and-Answer Training}
+
+% \section{Rapid Questions}
+% \section{Follow-Up Questions}
+% \section{Unexpected Questions}
+% \section{Technical Questions}
+% \section{Critical Questions}
+% \section{Interview Questions}
+
+% \chapter{Speaking Challenge Library}
+
+% \section{30-Second Challenges}
+% \section{60-Second Challenges}
+% \section{Two-Minute Challenges}
+% \section{Five-Minute Challenges}
+% \section{Ten-Minute Presentations}
+
+% \chapter{Listening Challenge Library}
+
+% \section{Micro-Listening}
+% \section{Dictation Challenges}
+% \section{Accent Challenges}
+% \section{Speed Challenges}
+% \section{Inference Challenges}
+
+% \chapter{Pronunciation Challenge Library}
+
+% \section{Minimal Pair Challenges}
+% \section{Tongue Twisters}
+% \section{Stress Challenges}
+% \section{Rhythm Challenges}
+% \section{Intonation Challenges}
+% \section{Shadowing Challenges}
+
+% \chapter{Vocabulary Challenge Library}
+
+% \section{Active Recall}
+% \section{Collocation Completion}
+% \section{Synonym Precision}
+% \section{Paraphrase Challenges}
+% \section{Contextual Vocabulary}
+
+% \chapter{Grammar Challenge Library}
+
+% \section{Error Correction}
+% \section{Sentence Transformation}
+% \section{Grammar in Conversation}
+% \section{Grammar Under Time Pressure}
+
+% \chapter{Writing Challenge Library}
+
+% \section{Five-Minute Writing}
+% \section{Paragraph Challenges}
+% \section{Summary Challenges}
+% \section{Argument Challenges}
+% \section{Academic Writing Challenges}
+
+
+% ================================================================
+% PART XIII — ASSESSMENT
+% ================================================================
+
+\part{Assessment, Measurement and Progress Control}
+
+% \chapter{Baseline Assessment}
+
+% \section{Speaking Baseline}
+% \section{Pronunciation Baseline}
+% \section{Listening Baseline}
+% \section{Vocabulary Baseline}
+% \section{Grammar Baseline}
+% \section{Reading Baseline}
+% \section{Writing Baseline}
+
+% \chapter{Weekly Assessment System}
+
+% \section{Pronunciation Score}
+% \section{Listening Score}
+% \section{Speaking Fluency Score}
+% \section{Speaking Accuracy Score}
+% \section{Vocabulary Score}
+% \section{Grammar Score}
+% \section{Writing Score}
+
+% \chapter{Monthly Assessment System}
+
+% \section{Recorded Speaking Test}
+% \section{Pronunciation Test}
+% \section{Listening Test}
+% \section{Grammar Test}
+% \section{Vocabulary Test}
+% \section{Reading Test}
+% \section{Writing Test}
+% \section{Professional Communication Test}
+
+% \chapter{Quarterly Examinations}
+
+% \section{Quarter 1 Examination}
+% \section{Quarter 2 Examination}
+% \section{Quarter 3 Examination}
+% \section{Quarter 4 Examination}
+
+% \chapter{Pronunciation Evaluation Rubric}
+
+% \section{Individual Sounds}
+% \section{Word Stress}
+% \section{Sentence Stress}
+% \section{Rhythm}
+% \section{Connected Speech}
+% \section{Intonation}
+% \section{Overall Intelligibility}
+% \section{RP Consistency}
+
+% \chapter{Speaking Evaluation Rubric}
+
+% \section{Fluency}
+% \section{Coherence}
+% \section{Lexical Range}
+% \section{Grammar}
+% \section{Pronunciation}
+% \section{Interaction}
+% \section{Idea Organisation}
+% \section{Professional Effectiveness}
+
+% \chapter{Writing Evaluation Rubric}
+
+% \section{Task Achievement}
+% \section{Organisation}
+% \section{Coherence}
+% \section{Cohesion}
+% \section{Grammar}
+% \section{Vocabulary}
+% \section{Academic Register}
+% \section{Clarity}
+% \section{Precision}
+
+% \chapter{Error Tracking System}
+
+% \section{Pronunciation Error Log}
+% \section{Grammar Error Log}
+% \section{Vocabulary Error Log}
+% \section{Writing Error Log}
+% \section{Listening Failure Log}
+% \section{Communication Breakdown Log}
+
+% \chapter{Progress Dashboard}
+
+% \section{Daily Metrics}
+% \section{Weekly Metrics}
+% \section{Monthly Metrics}
+% \section{Quarterly Metrics}
+% \section{Fluency Trend}
+% \section{Pronunciation Trend}
+% \section{Listening Trend}
+% \section{Vocabulary Growth}
+% \section{Grammar Accuracy}
+% \section{Writing Quality}
+
+
+% ================================================================
+% PART XIV — CAPSTONE
+% ================================================================
+
+\part{Capstone and Final Proficiency Demonstration}
+
+% \chapter{Capstone Professional Presentation}
+
+% \section{Topic Selection}
+% \section{Research}
+% \section{Presentation Structure}
+% \section{Visual Support}
+% \section{Pronunciation Preparation}
+% \section{Delivery}
+% \section{Questions and Answers}
+
+% \chapter{Capstone Technical Explanation}
+
+% \section{Five-Minute Version}
+% \section{Ten-Minute Version}
+% \section{Non-Technical Audience Version}
+% \section{Expert Audience Version}
+
+% \chapter{Capstone Meeting Simulation}
+
+% \section{Opening}
+% \section{Technical Discussion}
+% \section{Disagreement}
+% \section{Negotiation}
+% \section{Decision}
+% \section{Summary}
+% \section{Action Items}
+
+% \chapter{Capstone Academic Writing Project}
+
+% \section{Abstract}
+% \section{Introduction}
+% \section{Argument}
+% \section{Evidence}
+% \section{Discussion}
+% \section{Conclusion}
+% \section{Editing and Proofreading}
+
+% \chapter{Final Oral Examination}
+
+% \section{Pronunciation}
+% \section{Conversation}
+% \section{Impromptu Speaking}
+% \section{Technical Explanation}
+% \section{Meeting Simulation}
+% \section{Question-and-Answer Session}
+
+% \chapter{Final Written Examination}
+
+% \section{Grammar}
+% \section{Vocabulary}
+% \section{Reading}
+% \section{Academic Writing}
+% \section{Professional Writing}
+
+% \chapter{Final Progress Report}
+
+% \section{Baseline Versus Final Performance}
+% \section{Achievements}
+% \section{Residual Weaknesses}
+% \section{Pronunciation Profile}
+% \section{Communication Profile}
+% \section{Independent Learning Plan}
+
+
+% ================================================================
+% APPENDICES
+% ================================================================
+
+\appendix
+
+\part{Reference Appendices}
+
+% \chapter{Complete International Phonetic Alphabet Reference for English}
+
+% \chapter{Contemporary RP Sound Inventory}
+
+% \chapter{British English Vowel Chart}
+
+% \chapter{British English Consonant Chart}
+
+% \chapter{Minimal-Pair Master List}
+
+% \chapter{Word-Stress Reference Tables}
+
+% \chapter{Weak Forms Reference}
+
+% \chapter{Connected-Speech Reference}
+
+% \chapter{British Intonation Reference}
+
+% \chapter{British Versus American Pronunciation}
+
+% \chapter{British Versus American Vocabulary}
+
+% \chapter{British Versus American Spelling}
+
+% \chapter{Common Pronunciation Problems for Spanish Speakers}
+
+% \section{Vowel Substitution}
+% \section{Consonant Substitution}
+% \section{Epenthesis}
+% \section{Consonant-Cluster Simplification}
+% \section{Over-Rhoticity}
+% \section{Syllable-Timed Rhythm}
+% \section{Weak-Form Difficulties}
+% \section{Stress Transfer}
+% \section{Intonation Transfer}
+
+% \chapter{Common Grammar Problems for Spanish Speakers}
+
+% \chapter{False Friends}
+
+% \chapter{High-Frequency British English Vocabulary}
+
+% \chapter{Academic Word List}
+
+% \chapter{Professional Vocabulary List}
+
+% \chapter{Technical Vocabulary List}
+
+% \chapter{Collocation Dictionary}
+
+% \chapter{Phrasal Verb Reference}
+
+% \chapter{Discourse Marker Reference}
+
+% \chapter{Meeting Language Reference}
+
+% \chapter{Presentation Language Reference}
+
+% \chapter{Argumentation Language Reference}
+
+% \chapter{Clarification and Repair Language}
+
+% \chapter{Politeness and Diplomatic Language}
+
+% \chapter{Academic Writing Phrasebank}
+
+% \chapter{Technical Writing Phrasebank}
+
+% \chapter{Professional Email Phrasebank}
+
+% \chapter{Common Academic Verbs}
+
+% \chapter{Reporting Verb Reference}
+
+% \chapter{Hedging Language Reference}
+
+% \chapter{Linking and Cohesion Reference}
+
+% \chapter{Punctuation Reference}
+
+% \chapter{British Spelling Reference}
+
+% \chapter{Daily Conversation Question Bank}
+
+% \chapter{Professional Conversation Question Bank}
+
+% \chapter{Technical Discussion Question Bank}
+
+% \chapter{Academic Discussion Question Bank}
+
+% \chapter{Impromptu Speaking Topic Bank}
+
+% \chapter{Debate Topic Bank}
+
+% \chapter{Presentation Topic Bank}
+
+% \chapter{Reading Resource Framework}
+
+% \chapter{Listening Resource Framework}
+
+% \chapter{Shadowing Resource Framework}
+
+% \chapter{Pronunciation Recording Log}
+
+% \chapter{Daily Study Log}
+
+% \chapter{Weekly Progress Log}
+
+% \chapter{Monthly Progress Report Template}
+
+% \chapter{Vocabulary Journal Template}
+
+% \chapter{Collocation Journal Template}
+
+% \chapter{Pronunciation Journal Template}
+
+% \chapter{Grammar Error Journal Template}
+
+% \chapter{Writing Error Journal Template}
+
+% \chapter{Listening Failure Journal Template}
+
+% \chapter{Speaking Reflection Template}
+
+% \chapter{Meeting Performance Checklist}
+
+% \chapter{Presentation Performance Checklist}
+
+% \chapter{Self-Assessment Rubrics}
+
+% \chapter{Peer and Tutor Feedback Rubrics}
+
+% \chapter{CEFR Self-Assessment Grid}
+
+% \chapter{Recommended Dictionaries}
+
+% \chapter{Recommended Pronunciation Dictionaries}
+
+% \chapter{Recommended British English Corpora}
+
+% \chapter{Recommended Podcasts}
+
+% \chapter{Recommended News Sources}
+
+% \chapter{Recommended Audiobooks}
+
+% \chapter{Recommended YouTube Resources}
+
+% \chapter{Recommended Academic Reading Sources}
+
+% \chapter{Recommended Speech-Recording Tools}
+
+% \chapter{Recommended Spaced-Repetition Tools}
+
+% \chapter{Independent Learning After Month 12}
+
+
+% ================================================================
+% BACK MATTER
+% ================================================================
+
+\backmatter
+
+% \chapter*{Glossary}
+
+% \chapter*{IPA Symbol Index}
+
+% \chapter*{Grammar Index}
+
+% \chapter*{Vocabulary Index}
+
+% \chapter*{Pronunciation Index}
+
+% \chapter*{Communication Functions Index}
+
+% \chapter*{Bibliography}
+
+% \chapter*{Final 12-Month Achievement Record}
+
+
+% ============================================================
+% BACK MATTER
+% ============================================================
+
+% \backmatter
+
+% \printglossary[
+%     type=\acronymtype,
+%     title=Acronyms
+% ]
+
+% \printglossary[
+%     title=Glossary
+% ]
+
+% \printbibliography[
+%     heading=bibintoc,
+%     title=References
+% ]
+
+% \printindex
+
+% ============================================================
+% END DOCUMENT
+% ============================================================
+\ifdefined\VowelsStandalonefalse\else
+\end{document}
+\fi
+\endinput
